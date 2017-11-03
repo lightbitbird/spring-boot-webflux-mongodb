@@ -1,9 +1,10 @@
 # Spring Boot Webflux Reactive Mongo
 
-<br/>
+**Spring 5 reactor REST API demo - Webflux, Netty Server, MongoDB.**
 
-./gradlew bootRun
+This application uses routing such as Akka Http. 
 
-<br/>
+`./gradlew bootRun`
+
 
 And then go to http://localhost:9000 to test the API's.
