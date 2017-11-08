@@ -2,26 +2,8 @@ package com.reactive.mongodb.example.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.io.Serializable;
 
-//@Document
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@ToString
-//public class Person {
-//    @Id
-//    private String id;
-//    private String name;
-//    private int age;
-//
-////    public Person(final String id, final String name, final int age) {
-////        this.id = id;
-////        this.name = name;
-////        this.age = age;
-////    }
-//
-//}
+import java.io.Serializable;
 
 @Document(collection = "person")
 public class Person implements Serializable {
@@ -68,9 +50,9 @@ public class Person implements Serializable {
     @Override
     public String toString() {
         return "Person{" +
-            "id='" + id + '\'' +
-            ", name='" + name + '\'' +
-            ", age=" + age +
-            '}';
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

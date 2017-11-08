@@ -28,8 +28,6 @@ public class PersonRouter {
 
     public RouterFunction<ServerResponse> routes() {
         return nest(path("/person"), route(GET("/list").and(accept(APPLICATION_JSON)), this::listAll)
-                // .andRoute(GET("/list2").and(accept(APPLICATION_JSON)),
-                // this::findAllMono)
                 .andRoute(GET("/{id}").and(accept(APPLICATION_JSON)), this::findById)
                 .andRoute(POST("/save").and(accept(APPLICATION_JSON)), this::save)
                 .andRoute(POST("/update/{id}").and(accept(APPLICATION_JSON)), this::update));
@@ -42,12 +40,6 @@ public class PersonRouter {
     private Mono<ServerResponse> findById(ServerRequest req) {
         return ok().body(personService.findById(req), Person.class);
     }
-
-    // private Mono<ServerResponse> findAllMono(ServerRequest req) {
-    // return ok().body(BodyInserters.fromPublisher(personService.findAllMono(),
-    // new ParameterizedTypeReference<List<Person>>() {
-    // }));
-    // }
 
     private Mono<ServerResponse> save(ServerRequest req) {
         personService.insert(req).subscribe();
